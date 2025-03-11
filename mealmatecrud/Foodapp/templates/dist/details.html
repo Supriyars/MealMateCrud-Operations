@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+{% block content %}
+<div style="display: flex; flex-wrap: wrap;">
+    <div style="flex: 0 0 33.33%; padding: 10px;">
+<img src = "{{item.item_image}}" height="400px" width="400px"/>
+<h3>{{item.item_name}},{{item.item_desc}},{{item.price}}</h3>
+   </div>
+   <div style="flex: 0 0 33.33%; padding: 10px;"></div>
+   <div style="flex: 0 0 33.33%; padding: 10px;">
+    <button><a href="{% url 'Foodapp:add_items' %}">Add Item</a></button>
+    <button><a href="{% url 'Foodapp:update_items' item.id%}">Update Item</a></button>
+    <button><a href="{% url 'Foodapp:delete_item' item.id%}">Delete Item</a></button>
+   </div>
+</div>
+{% endblock %}
